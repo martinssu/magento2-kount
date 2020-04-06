@@ -80,6 +80,7 @@ class Index extends Action implements \Magento\Framework\App\CsrfAwareActionInte
             }
 
             $xmlString = file_get_contents('php://input');
+            $this->logger->info($xmlString);
             $this->respondOnReceiptOfEvents();
             $response = $this->ensManager->handleRequest($xmlString);
             $this->logger->info($response);
